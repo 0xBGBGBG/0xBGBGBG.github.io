@@ -1,39 +1,45 @@
 # 0xBGBGBG.github.io
 
-Portfólio de segurança ofensiva de **Artur Borges** — currículo, notas de estudo,
-ferramentas e writeups de laboratório.
+Portfólio de segurança ofensiva de **Artur Borges** — currículo, certificações,
+laboratórios, notas e writeups.
 
 **No ar em:** https://0xbgbgbg.github.io
 
 ---
 
-## Estrutura
+## Como funciona
+
+Página única com coluna de navegação à esquerda e painel de conteúdo à direita.
+Cada item da coluna é uma rota por hash (`#oscp`, `#pg-practice`, `#htb-academy`),
+então qualquer seção pode ser compartilhada por link direto.
+
+Site estático puro — sem Jekyll, sem build, sem dependência além da fonte.
+O `.nojekyll` desliga o processamento do GitHub Pages, então o que está no
+repositório é exatamente o que é servido.
 
 | Caminho | O que é |
 |---|---|
-| `index.html` | Currículo (página única, bilíngue PT/EN, sem dependências além da fonte) |
-| `assets/css/cv.css` | Estilos do currículo — tokens de cor no `:root`, tema claro e escuro |
-| `assets/js/cv.js` | Contador do exame, troca de idioma, botão de copiar |
-| `writeups.md` | Índice de writeups (tema Just the Docs) |
-| `writeups/` | Um arquivo por máquina, a partir de `TEMPLATE.md` |
-| `notes.md` | Notas de estudo |
-| `tools.md` | Ferramentas e scripts |
-| `about.md` | Sobre |
+| `index.html` | Todo o conteúdo, uma seção `.view` por item da navegação |
+| `assets/css/cv.css` | Tokens de cor no `:root`, tema claro e escuro, layout de duas colunas |
+| `assets/js/cv.js` | Roteamento por hash, troca de idioma, contador do exame, gaveta no mobile |
+| `writeups/TEMPLATE.md` | Modelo de writeup no formato de relatório de pentest |
 | `.well-known/security.txt` | Canal de contato para relato de vulnerabilidade (RFC 9116) |
 
-O site roda em Jekyll no GitHub Pages. A home usa front matter vazio para não
-receber o layout do tema; as demais páginas usam o Just the Docs.
+Bilíngue PT/EN: o português fica no conteúdo do elemento, o inglês no atributo
+`data-en`. O botão no rodapé da coluna troca os dois.
 
 ---
 
-## Como atualizar
+## Manutenção
 
-**Números do currículo** — edite `index.html`.
-**Data do exame** — `EXAM_DATE`, no topo de `assets/js/cv.js`.
-**Novo writeup** — copie `writeups/TEMPLATE.md`, renomeie, ajuste o `permalink`
-do front matter e escreva.
+**Data do exame:** `EXAM_DATE`, no topo de `assets/js/cv.js`.
 
-Todo push na branch `main` republica o site sozinho.
+**Nova seção:** um `<a href="#slug">` na coluna e uma
+`<section class="view" id="v-slug" hidden>` no `<main>`.
+
+**Novo writeup:** copie `writeups/TEMPLATE.md` e ligue a partir da seção Writeups.
+
+Todo push na branch `main` republica o site.
 
 ---
 

@@ -1,6 +1,3 @@
----
-# Front matter vazio de propósito: faz o Jekyll servir esta página sem o layout do tema.
----
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -8,13 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; img-src 'self' data:; connect-src 'none'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta name="description" content="Artur Borges (0xBGBGBG) - analista de seguranca em transicao para seguranca ofensiva. Trilha OSCP, labs, writeups e ferramental.">
+<meta name="description" content="Artur Borges (0xBGBGBG) - analista de seguranca da informacao em trilha para seguranca ofensiva. Certificacoes, laboratorios, writeups e ferramental.">
 <meta name="color-scheme" content="light dark">
 <meta property="og:title" content="Artur Borges - Offensive Security">
-<meta property="og:description" content="Trilha OSCP, labs, writeups e ferramental.">
+<meta property="og:description" content="Certificacoes, laboratorios, writeups e ferramental.">
 <meta property="og:type" content="profile">
 <meta property="og:url" content="https://0xbgbgbg.github.io/">
-<title>Artur Borges — Offensive Security</title>
+<title>Artur Borges</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap">
@@ -22,108 +19,375 @@
 </head>
 <body>
 
-<div class="topbar">
-  <div class="topbar-in">
-    <span class="mark"><b>Artur Borges</b> · <span data-en="Offensive Security">Segurança Ofensiva</span></span>
-    <div class="switch" role="group" aria-label="Idioma / Language">
-      <button id="btn-pt" type="button" aria-pressed="true">PT</button>
-      <button id="btn-en" type="button" aria-pressed="false">EN</button>
-    </div>
-  </div>
+<div class="bar">
+  <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="rail">Menu</button>
+  <span class="nm">Artur Borges</span>
 </div>
+<div class="scrim" id="scrim" hidden></div>
 
-<div class="wrap">
+<div class="shell">
 
-  <header class="hero">
+  <aside class="rail" id="rail">
+    <div class="brand">
+      <span class="nm">Artur Borges</span>
+      <span class="hd">0xBGBGBG</span>
+      <span class="rl" data-en="Offensive Security">Segurança Ofensiva</span>
+    </div>
+
+    <nav class="tree" aria-label="Seções">
+      <a class="top" href="#curriculo" data-en="CV">Currículo</a>
+
+      <details class="grp" open>
+        <summary data-en="Certifications">Certificações</summary>
+        <a href="#security-plus">CompTIA Security+</a>
+        <a href="#crta">CRTA</a>
+        <a href="#oscp"><span data-en="OSCP">OSCP</span><span class="tag">23 out</span></a>
+      </details>
+
+      <details class="grp" open>
+        <summary data-en="Hands-on">Prática</summary>
+        <a href="#pratica" data-en="Overview">Visão geral</a>
+        <a href="#pg-play">Proving Grounds Play</a>
+        <a href="#pg-practice">Proving Grounds Practice</a>
+        <a href="#htb-academy"><span>HTB Academy</span><span class="tag">32</span></a>
+        <a href="#htb-maquinas"><span data-en="HTB Machines">HTB Máquinas</span></a>
+      </details>
+
+      <details class="grp" open>
+        <summary data-en="Track record">Trajetória</summary>
+        <a href="#experiencia" data-en="Experience">Experiência</a>
+        <a href="#ferramental" data-en="Toolkit">Ferramental</a>
+        <a href="#sobre" data-en="About">Sobre</a>
+      </details>
+
+      <details class="grp" open>
+        <summary data-en="Library">Conteúdo</summary>
+        <a href="#writeups">Writeups</a>
+        <a href="#notas" data-en="Notes">Notas</a>
+        <a href="#ferramentas" data-en="Tools">Ferramentas</a>
+      </details>
+
+      <a class="top" href="#contato" data-en="Contact">Contato</a>
+    </nav>
+
+    <div class="rail-foot">
+      <div class="switch" role="group" aria-label="Idioma / Language">
+        <button id="btn-pt" type="button" aria-pressed="true">PT</button>
+        <button id="btn-en" type="button" aria-pressed="false">EN</button>
+      </div>
+      <div class="out">
+        <a href="https://github.com/0xBGBGBG">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/arturborgges/">LinkedIn ↗</a>
+        <a href="https://profile.hackthebox.com/profile/019e2c5e-b1eb-7093-b9fa-ec20945bbefb">HTB ↗</a>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+
+  <!-- ══════════ CURRÍCULO ══════════ -->
+  <section class="view" id="v-curriculo" data-title-pt="Currículo" data-title-en="CV">
     <p class="eyebrow" data-en="Offensive Security · Red Team track">Segurança Ofensiva · trilha Red Team</p>
     <h1>Artur Borges</h1>
-    <p class="handle">0xBGBGBG</p>
-    <p class="tagline" data-en="Information security analyst with six years in IT behind the move. I work on vulnerability scanning and exposure analysis, and I'm preparing for the OSCP.">Analista de segurança da informação, com seis anos de TI antes da virada. Trabalho com varredura de vulnerabilidades e análise de exposição, e estou em preparação para o OSCP.</p>
+    <p class="lede" data-en="Information security analyst with six years in IT behind the move. I work on vulnerability scanning and exposure analysis, and I'm preparing for the OSCP.">Analista de segurança da informação, com seis anos de TI antes da virada. Trabalho com varredura de vulnerabilidades e análise de exposição, e estou em preparação para o OSCP.</p>
+
     <div class="meta">
       <span class="chip"><span class="dot"></span><span data-en="Available for red team roles">Disponível para vagas de red team</span></span>
-      <span class="chip">Security+ · CRTA</span>
       <span class="chip"><span data-en="6+ years in IT">6+ anos em TI</span></span>
       <span class="chip">Passo Fundo, RS — Brasil</span>
-      <a class="chip" href="https://github.com/0xBGBGBG">GitHub ↗</a>
-      <a class="chip" href="https://www.linkedin.com/in/arturborgges/">LinkedIn ↗</a>
-      <a class="chip" href="https://profile.hackthebox.com/profile/019e2c5e-b1eb-7093-b9fa-ec20945bbefb">Hack The Box ↗</a>
     </div>
-  </header>
 
-  <section>
-    <div class="sec-head">
-      <span class="sec-id">01</span>
-      <h2 data-en="OSCP track">Trilha OSCP</h2>
-    </div>
+    <hr class="rule">
+
     <div class="exam">
       <div class="count">
-        <span class="num" id="days">—</span>
-        <span class="lbl" data-en="days to the exam">dias para o exame</span>
-        <span class="date" id="exam-date"></span>
+        <span class="num" data-days>—</span>
+        <span class="lbl" data-en="days to the OSCP">dias para o OSCP</span>
+        <span class="date" data-examdate></span>
       </div>
       <div class="track">
         <div class="bar-row">
           <div class="bar-top"><span>PEN-200 — <span data-en="modules">módulos</span></span><b><span class="fill">[--]</span>/25</b></div>
-          <div class="bar"><i class="w40"></i></div>
+          <div class="prog"><i class="w40"></i></div>
         </div>
         <div class="bar-row">
           <div class="bar-top"><span data-en="Active Directory sets">Conjuntos de Active Directory</span><b><span class="fill">[--]</span>/6</b></div>
-          <div class="bar"><i class="amber w50"></i></div>
+          <div class="prog"><i class="amber w50"></i></div>
         </div>
         <div class="bar-row">
           <div class="bar-top"><span data-en="OffSec labs completed">Labs OffSec concluídos</span><b>91</b></div>
-          <div class="bar"><i class="ok w72"></i></div>
+          <div class="prog"><i class="ok w72"></i></div>
         </div>
       </div>
     </div>
-    <p class="note" data-en="Preparation routine: PEN-200 lab machines on weekdays, a full Proving Grounds box plus a written report every weekend, under the same 24-hour exam constraints.">Rotina de preparação: máquinas do laboratório PEN-200 durante a semana, uma máquina completa do Proving Grounds com relatório escrito a cada fim de semana, sob a mesma restrição de 24 horas do exame.</p>
-  </section>
 
-  <section>
-    <div class="sec-head">
-      <span class="sec-id">02</span>
-      <h2 data-en="Certifications">Certificações</h2>
-    </div>
+    <h2 class="sub-h" data-en="Certifications">Certificações</h2>
     <div class="grid">
-      <div class="card">
+      <a class="card" href="#oscp">
         <span class="status s-prog" data-en="exam 23 Oct 2026">exame 23 out 2026</span>
         <h3>OSCP</h3>
         <span class="sub">OffSec · PEN-200</span>
-        <p data-en="24-hour hands-on exam: exploitation, privilege escalation and Active Directory, followed by a professional report.">Exame prático de 24 horas: exploração, escalação de privilégios e Active Directory, seguido de relatório profissional.</p>
-      </div>
-      <div class="card">
+      </a>
+      <a class="card" href="#crta">
         <span class="status s-ok" data-en="certified">obtida</span>
         <h3>CRTA</h3>
         <span class="sub">CyberWarFare Labs · 2026</span>
-        <p data-en="Certified Red Team Analyst: red team operations in an Active Directory lab — enumeration, lateral movement and evasion.">Certified Red Team Analyst: operação de red team em laboratório de Active Directory — enumeração, movimentação lateral e evasão.</p>
-      </div>
-      <div class="card">
+      </a>
+      <a class="card" href="#security-plus">
         <span class="status s-ok" data-en="certified">obtida</span>
-        <h3>Security+</h3>
-        <span class="sub">CompTIA · <span data-en="Aug 2025">ago 2025</span></span>
-        <p data-en="Defensive fundamentals: secure architecture, risk management, cryptography and incident response.">Fundamentos defensivos: arquitetura segura, gestão de risco, criptografia e resposta a incidentes.</p>
-      </div>
+        <h3>CompTIA Security+</h3>
+        <span class="sub"><span data-en="Aug 2025">ago 2025</span></span>
+      </a>
     </div>
-    <p class="note" data-en="The Security+ gives me the defender's vocabulary; the CRTA gave me the Active Directory attack path. The OSCP is the step that ties both to a report someone can act on.">A Security+ me deu o vocabulário do lado defensivo; a CRTA, o caminho de ataque em Active Directory. O OSCP é o passo que amarra os dois a um relatório em que alguém consegue agir.</p>
-  </section>
 
-  <section>
-    <div class="sec-head">
-      <span class="sec-id">03</span>
-      <h2 data-en="Hands-on record">Prática registrada</h2>
-    </div>
+    <h2 class="sub-h" data-en="Hands-on record">Prática registrada</h2>
     <div class="stats">
       <div class="stat"><div class="v">91</div><div class="k" data-en="OffSec labs">Labs OffSec</div></div>
       <div class="stat"><div class="v">215</div><div class="k" data-en="flags captured">Flags capturadas</div></div>
       <div class="stat"><div class="v">569<span class="unit">h</span></div><div class="k" data-en="in labs">Em laboratório</div></div>
-      <div class="stat"><div class="v">32</div><div class="k" data-en="HTB Academy modules">Módulos HTB Academy</div></div>
+      <div class="stat"><div class="v">32</div><div class="k" data-en="HTB modules">Módulos HTB</div></div>
     </div>
+    <p class="note" data-en="569 hours is the number that matters here. A certificate can be bought; the hours cannot.">569 horas é o número que importa aqui. Certificado se compra; hora de laboratório não.</p>
+
+    <h2 class="sub-h" data-en="Current role">Cargo atual</h2>
+    <div class="tl">
+      <article class="job">
+        <div class="when"><span data-en="Apr 2025">abr 2025</span> — <span data-en="present">atual</span></div>
+        <div>
+          <h3 data-en="Information Security Analyst Jr.">Analista de Segurança da Informação Jr.</h3>
+          <p class="org">Farmácias São João</p>
+          <ul>
+            <li data-en="Vulnerability scanning and exposure analysis across the IT estate.">Varredura de vulnerabilidades e análise de exposição do parque de TI.</li>
+            <li data-en="Triage and prioritisation of findings by severity (CVSS v3.1).">Triagem e priorização de achados por criticidade (CVSS v3.1).</li>
+          </ul>
+        </div>
+      </article>
+    </div>
+    <div class="meta">
+      <a class="chip" href="#experiencia"><span data-en="Full history ↗">Histórico completo ↗</span></a>
+      <a class="chip" href="#contato"><span data-en="Contact ↗">Contato ↗</span></a>
+    </div>
+
+    <div class="draft">
+      <b data-en="DRAFT — delete this box when the red placeholders are filled.">RASCUNHO — apague esta caixa quando os marcadores vermelhos estiverem preenchidos.</b><br>
+      <span data-en="Left: PEN-200 modules, AD sets, the previous IT role, machine lists under Proving Grounds and HTB.">Faltam: módulos do PEN-200, conjuntos de AD, o cargo anterior de TI, e as listas de máquinas em Proving Grounds e HTB.</span>
+    </div>
+  </section>
+
+  <!-- ══════════ SECURITY+ ══════════ -->
+  <section class="view" id="v-security-plus" data-title-pt="CompTIA Security+" data-title-en="CompTIA Security+" hidden>
+    <p class="eyebrow" data-en="Certification">Certificação</p>
+    <h1>CompTIA Security+</h1>
+    <p class="lede" data-en="The defender's vocabulary. It is the base layer everything offensive sits on: you cannot argue a finding to a blue team without it.">O vocabulário do lado defensivo. É a camada de base sobre a qual o resto se apoia: não dá para defender um achado junto ao time azul sem ela.</p>
+
+    <div class="meta">
+      <span class="chip"><span class="dot"></span><span data-en="certified">obtida</span></span>
+      <span class="chip"><span data-en="02 Aug 2025">02 ago 2025</span></span>
+      <span class="chip">CompTIA</span>
+      <span class="chip">SY0-701</span>
+      <span class="chip"><span data-en="valid until Aug 2028">válida até ago 2028</span></span>
+    </div>
+
+    <h2 class="sub-h" data-en="Domains covered">Domínios cobertos</h2>
+    <div class="phases">
+      <div class="phase">
+        <div class="ph"><b data-en="General concepts">Conceitos gerais</b>1.0</div>
+        <div class="tools"><span class="tool" data-en="Security controls">Controles de segurança</span><span class="tool" data-en="Cryptography">Criptografia</span><span class="tool" data-en="Change management">Gestão de mudança</span></div>
+      </div>
+      <div class="phase">
+        <div class="ph"><b data-en="Threats &amp; vulnerabilities">Ameaças e vulnerabilidades</b>2.0</div>
+        <div class="tools"><span class="tool" data-en="Threat actors">Atores de ameaça</span><span class="tool" data-en="Attack surfaces">Superfícies de ataque</span><span class="tool" data-en="Mitigations">Mitigações</span></div>
+      </div>
+      <div class="phase">
+        <div class="ph"><b data-en="Architecture">Arquitetura</b>3.0</div>
+        <div class="tools"><span class="tool" data-en="Secure design">Design seguro</span><span class="tool" data-en="Resilience">Resiliência</span><span class="tool" data-en="Data protection">Proteção de dados</span></div>
+      </div>
+      <div class="phase">
+        <div class="ph"><b data-en="Operations">Operações</b>4.0</div>
+        <div class="tools"><span class="tool" data-en="Vulnerability management">Gestão de vulnerabilidades</span><span class="tool" data-en="Monitoring">Monitoramento</span><span class="tool" data-en="Incident response">Resposta a incidentes</span><span class="tool" data-en="Identity &amp; access">Identidade e acesso</span></div>
+      </div>
+      <div class="phase">
+        <div class="ph"><b data-en="Governance">Governança</b>5.0</div>
+        <div class="tools"><span class="tool" data-en="Risk">Risco</span><span class="tool" data-en="Third parties">Terceiros</span><span class="tool" data-en="Compliance">Conformidade</span><span class="tool" data-en="Audit">Auditoria</span></div>
+      </div>
+    </div>
+
+    <p class="note" data-en="The vulnerability management domain is the one I use daily at work — it is the bridge between this certification and the job.">O domínio de gestão de vulnerabilidades é o que eu uso diariamente no trabalho — é a ponte entre esta certificação e o cargo.</p>
+  </section>
+
+  <!-- ══════════ CRTA ══════════ -->
+  <section class="view" id="v-crta" data-title-pt="CRTA" data-title-en="CRTA" hidden>
+    <p class="eyebrow" data-en="Certification">Certificação</p>
+    <h1>CRTA</h1>
+    <p class="lede" data-en="Certified Red Team Analyst. The first end-to-end red team operation in an Active Directory lab — from external foothold to domain compromise.">Certified Red Team Analyst. A primeira operação de red team ponta a ponta em laboratório de Active Directory — do acesso externo ao comprometimento do domínio.</p>
+
+    <div class="meta">
+      <span class="chip"><span class="dot"></span><span data-en="certified">obtida</span></span>
+      <span class="chip">2026</span>
+      <span class="chip">CyberWarFare Labs</span>
+      <a class="chip fill" href="https://labs.cyberwarfare.live/"><span data-en="[credential link]">[link da credencial]</span> ↗</a>
+    </div>
+
+    <h2 class="sub-h" data-en="What it covers">O que ela cobre</h2>
+    <div class="phases">
+      <div class="phase">
+        <div class="ph"><b data-en="Recon">Reconhecimento</b>TA0043</div>
+        <div class="tools"><span class="tool" data-en="External enumeration">Enumeração externa</span><span class="tool">OSINT</span></div>
+      </div>
+      <div class="phase">
+        <div class="ph"><b data-en="Initial access">Acesso inicial</b>TA0001</div>
+        <div class="tools"><span class="tool" data-en="Phishing simulation">Simulação de phishing</span><span class="tool" data-en="Exposed services">Serviços expostos</span></div>
+      </div>
+      <div class="phase">
+        <div class="ph"><b>Active Directory</b>TA0006</div>
+        <div class="tools"><span class="tool">BloodHound</span><span class="tool">Kerberoasting</span><span class="tool">AS-REP Roasting</span><span class="tool" data-en="ACL abuse">Abuso de ACL</span></div>
+      </div>
+      <div class="phase">
+        <div class="ph"><b data-en="Lateral movement">Movimentação lateral</b>TA0008</div>
+        <div class="tools"><span class="tool">Pass-the-Hash</span><span class="tool">WMI · WinRM</span><span class="tool" data-en="Pivoting">Pivoting</span></div>
+      </div>
+      <div class="phase">
+        <div class="ph"><b data-en="Evasion">Evasão</b>TA0005</div>
+        <div class="tools"><span class="tool" data-en="AV/EDR basics">Noções de AV/EDR</span><span class="tool" data-en="Obfuscation">Ofuscação</span></div>
+      </div>
+    </div>
+
+    <p class="note" data-en="This is the certification that matters most for the OSCP: the Active Directory set is worth 40 of the 100 exam points, and it is where most candidates fail.">Esta é a certificação que mais pesa para o OSCP: o conjunto de Active Directory vale 40 dos 100 pontos do exame, e é onde a maioria dos candidatos reprova.</p>
+    <p class="fine fill" data-en="[Check this list against the syllabus you actually did and cut anything that wasn't covered.]">[Confira esta lista contra o conteúdo que você realmente fez e corte o que não foi coberto.]</p>
+  </section>
+
+  <!-- ══════════ OSCP ══════════ -->
+  <section class="view" id="v-oscp" data-title-pt="OSCP" data-title-en="OSCP" hidden>
+    <p class="eyebrow" data-en="In progress">Em andamento</p>
+    <h1>OSCP</h1>
+    <p class="lede" data-en="OffSec Certified Professional. A 24-hour hands-on exam followed by a professional report — the report is graded, and it is where the job actually lives.">OffSec Certified Professional. Exame prático de 24 horas seguido de relatório profissional — o relatório é avaliado, e é nele que o trabalho de verdade acontece.</p>
+
+    <div class="exam">
+      <div class="count">
+        <span class="num" data-days>—</span>
+        <span class="lbl" data-en="days to the exam">dias para o exame</span>
+        <span class="date" data-examdate></span>
+      </div>
+      <div class="track">
+        <div class="bar-row">
+          <div class="bar-top"><span>PEN-200 — <span data-en="modules">módulos</span></span><b><span class="fill">[--]</span>/25</b></div>
+          <div class="prog"><i class="w40"></i></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-top"><span data-en="Active Directory sets">Conjuntos de Active Directory</span><b><span class="fill">[--]</span>/6</b></div>
+          <div class="prog"><i class="amber w50"></i></div>
+        </div>
+        <div class="bar-row">
+          <div class="bar-top"><span data-en="OffSec labs completed">Labs OffSec concluídos</span><b>91</b></div>
+          <div class="prog"><i class="ok w72"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="sub-h" data-en="Exam format">Formato do exame</h2>
+    <ul class="rows">
+      <li><span class="sev sev-c">40</span><span class="name" data-en="Active Directory set">Conjunto de Active Directory</span><span class="tags" data-en="all or nothing on the chain">tudo ou nada na cadeia</span></li>
+      <li><span class="sev sev-m">60</span><span class="name" data-en="Three standalone machines">Três máquinas independentes</span><span class="tags">20 <span data-en="each">cada</span></span></li>
+      <li><span class="sev sev-l">70</span><span class="name" data-en="Passing score">Nota de aprovação</span><span class="tags" data-en="of 100 points">de 100 pontos</span></li>
+    </ul>
+
+    <h2 class="sub-h" data-en="Preparation routine">Rotina de preparação</h2>
+    <p data-en="PEN-200 lab machines on weekdays. Every weekend, one full Proving Grounds box under the same 24-hour constraint, with a written report at the end — because an unreported compromise scores zero in this exam, exactly as it does in a real engagement.">Máquinas do laboratório PEN-200 durante a semana. A cada fim de semana, uma máquina completa do Proving Grounds sob a mesma restrição de 24 horas, com relatório escrito ao final — porque comprometimento sem relatório vale zero neste exame, exatamente como num trabalho real.</p>
+    <p class="note" data-en="The report template I use is in the repository, under writeups/TEMPLATE.md.">O modelo de relatório que eu uso está no repositório, em writeups/TEMPLATE.md.</p>
+  </section>
+
+  <!-- ══════════ PRÁTICA — VISÃO GERAL ══════════ -->
+  <section class="view" id="v-pratica" data-title-pt="Prática" data-title-en="Hands-on" hidden>
+    <p class="eyebrow" data-en="Hands-on">Prática</p>
+    <h1 data-en="Hands-on record">Prática registrada</h1>
+    <p class="lede" data-en="Every number here comes from a platform profile that anyone can open and check.">Todo número aqui vem de um perfil de plataforma que qualquer um pode abrir e conferir.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="v">91</div><div class="k" data-en="OffSec labs">Labs OffSec</div></div>
+      <div class="stat"><div class="v">215</div><div class="k" data-en="flags captured">Flags capturadas</div></div>
+      <div class="stat"><div class="v">569<span class="unit">h</span></div><div class="k" data-en="in labs">Em laboratório</div></div>
+      <div class="stat"><div class="v">32</div><div class="k" data-en="HTB modules">Módulos HTB</div></div>
+    </div>
+
+    <h2 class="sub-h" data-en="Platforms">Plataformas</h2>
+    <div class="grid">
+      <a class="card" href="#pg-play">
+        <span class="sub">OffSec</span>
+        <h3>Proving Grounds Play</h3>
+        <p data-en="Free community machines, used for volume and speed.">Máquinas gratuitas da comunidade, usadas para volume e velocidade.</p>
+      </a>
+      <a class="card" href="#pg-practice">
+        <span class="sub">OffSec</span>
+        <h3>Proving Grounds Practice</h3>
+        <p data-en="OffSec-authored machines, closest thing to the exam.">Máquinas autorais da OffSec, o mais próximo do exame.</p>
+      </a>
+      <a class="card" href="#htb-academy">
+        <span class="sub">Hack The Box</span>
+        <h3>Academy</h3>
+        <p data-en="32 modules completed, mapped to attack phases.">32 módulos concluídos, mapeados por fase do ataque.</p>
+      </a>
+      <a class="card" href="#htb-maquinas">
+        <span class="sub">Hack The Box</span>
+        <h3 data-en="Machines">Máquinas</h3>
+        <p data-en="Level 51, Professional rank.">Nível 51, rank Professional.</p>
+      </a>
+    </div>
+
+    <h2 class="sub-h" data-en="Profile levels">Níveis de perfil</h2>
     <div class="meta">
       <span class="chip">OffSec · <span data-en="level">nível</span> 31 · 25 badges</span>
       <span class="chip">Hack The Box · <span data-en="level">nível</span> 51 · Professional</span>
     </div>
+  </section>
 
-    <h3 class="sub-h" data-en="HTB Academy modules, by attack phase">Módulos da HTB Academy, por fase do ataque</h3>
+  <!-- ══════════ PG PLAY ══════════ -->
+  <section class="view" id="v-pg-play" data-title-pt="Proving Grounds Play" data-title-en="Proving Grounds Play" hidden>
+    <p class="eyebrow">OffSec</p>
+    <h1>Proving Grounds Play</h1>
+    <p class="lede" data-en="Free community-contributed machines. I use them for volume: fast cycles of enumeration, foothold and escalation.">Máquinas gratuitas contribuídas pela comunidade. Uso para volume: ciclos rápidos de enumeração, acesso e escalação.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="v fill">[--]</div><div class="k" data-en="machines">Máquinas</div></div>
+      <div class="stat"><div class="v fill">[--]</div><div class="k">Linux</div></div>
+      <div class="stat"><div class="v fill">[--]</div><div class="k">Windows</div></div>
+    </div>
+
+    <h2 class="sub-h" data-en="Machines">Máquinas</h2>
+    <ul class="rows">
+      <li><span class="sev sev-l">EASY</span><span class="name fill">[nome]</span><span class="tags fill">Linux · [vetor]</span></li>
+      <li><span class="sev sev-m">MED</span><span class="name fill">[nome]</span><span class="tags fill">Windows · [vetor]</span></li>
+      <li><span class="sev sev-c">HARD</span><span class="name fill">[nome]</span><span class="tags fill">Linux · [vetor]</span></li>
+    </ul>
+    <p class="fine" data-en="Add one row per machine. Keep the severity chip matching the machine's own difficulty rating.">Adicione uma linha por máquina. Mantenha a etiqueta de severidade igual à dificuldade da própria máquina.</p>
+  </section>
+
+  <!-- ══════════ PG PRACTICE ══════════ -->
+  <section class="view" id="v-pg-practice" data-title-pt="Proving Grounds Practice" data-title-en="Proving Grounds Practice" hidden>
+    <p class="eyebrow">OffSec</p>
+    <h1>Proving Grounds Practice</h1>
+    <p class="lede" data-en="OffSec-authored machines. This is the closest simulation of the OSCP exam available, and it is where the weekend runs happen.">Máquinas autorais da OffSec. É a simulação mais próxima do exame do OSCP que existe, e é onde acontecem as sessões de fim de semana.</p>
+
+    <div class="stats">
+      <div class="stat"><div class="v fill">[--]</div><div class="k" data-en="machines">Máquinas</div></div>
+      <div class="stat"><div class="v fill">[--]</div><div class="k" data-en="with report">Com relatório</div></div>
+      <div class="stat"><div class="v fill">[--]</div><div class="k" data-en="under 24h">Em menos de 24h</div></div>
+    </div>
+
+    <h2 class="sub-h" data-en="Machines">Máquinas</h2>
+    <ul class="rows">
+      <li><span class="sev sev-l">EASY</span><span class="name fill">[nome]</span><span class="tags fill">Linux · [vetor]</span></li>
+      <li><span class="sev sev-m">MED</span><span class="name fill">[nome]</span><span class="tags fill">Windows · [vetor]</span></li>
+      <li><span class="sev sev-c">HARD</span><span class="name fill">[nome]</span><span class="tags fill">AD · [vetor]</span></li>
+    </ul>
+    <p class="fine" data-en="The 'with report' column is the one a hiring manager reads. Writing it is the habit the exam grades.">A coluna 'com relatório' é a que um gestor de contratação lê. Escrevê-lo é o hábito que o exame avalia.</p>
+  </section>
+
+  <!-- ══════════ HTB ACADEMY ══════════ -->
+  <section class="view" id="v-htb-academy" data-title-pt="HTB Academy" data-title-en="HTB Academy" hidden>
+    <p class="eyebrow">Hack The Box</p>
+    <h1>Academy</h1>
+    <p class="lede" data-en="32 modules completed, grouped by attack phase rather than listed by name — a coverage map reads in five seconds; a list of 32 titles reads in none.">32 módulos concluídos, agrupados por fase do ataque em vez de listados por nome — um mapa de cobertura se lê em cinco segundos; uma lista de 32 títulos não se lê.</p>
+
     <div class="phases">
       <div class="phase">
         <div class="ph"><b data-en="Foundations">Fundamentos</b>11</div>
@@ -138,7 +402,7 @@
         <div class="tools"><span class="tool">Footprinting</span><span class="tool">Network Enumeration with Nmap</span><span class="tool">Information Gathering — Web Edition</span></div>
       </div>
       <div class="phase">
-        <div class="ph"><b data-en="Web">Web</b>3</div>
+        <div class="ph"><b>Web</b>3</div>
         <div class="tools"><span class="tool">Introduction to Web Applications</span><span class="tool">Web Requests</span><span class="tool">JavaScript Deobfuscation</span></div>
       </div>
       <div class="phase">
@@ -163,19 +427,35 @@
       </div>
     </div>
 
-    <p class="fine" data-en="Writeups are published only for retired machines and labs, following each platform's disclosure policy.">Writeups são publicados apenas de máquinas e labs aposentados, seguindo a política de divulgação de cada plataforma.</p>
-    <div class="meta">
-      <a class="chip" href="/writeups/">Writeups ↗</a>
-      <a class="chip" href="/notes/">Notes ↗</a>
-      <a class="chip" href="/tools/">Tools ↗</a>
-    </div>
+    <p class="note" data-en="The thin rows are the honest ones: one module on lateral movement and three on Active Directory, against eleven on foundations. That is the gap the OSCP will test hardest.">As linhas magras são as honestas: um módulo de movimentação lateral e três de Active Directory, contra onze de fundamentos. É exatamente essa a lacuna que o OSCP mais cobra.</p>
   </section>
 
-  <section>
-    <div class="sec-head">
-      <span class="sec-id">04</span>
-      <h2 data-en="Experience">Experiência</h2>
+  <!-- ══════════ HTB MÁQUINAS ══════════ -->
+  <section class="view" id="v-htb-maquinas" data-title-pt="HTB Máquinas" data-title-en="HTB Machines" hidden>
+    <p class="eyebrow">Hack The Box</p>
+    <h1 data-en="Machines">Máquinas</h1>
+    <p class="lede" data-en="Level 51, Professional rank. Retired machines only below — active ones are under the platform's disclosure policy.">Nível 51, rank Professional. Abaixo, apenas máquinas aposentadas — as ativas estão sob a política de divulgação da plataforma.</p>
+
+    <div class="meta">
+      <span class="chip"><span data-en="level">nível</span> 51</span>
+      <span class="chip">Professional</span>
+      <a class="chip" href="https://profile.hackthebox.com/profile/019e2c5e-b1eb-7093-b9fa-ec20945bbefb"><span data-en="public profile">perfil público</span> ↗</a>
     </div>
+
+    <h2 class="sub-h" data-en="Retired machines">Máquinas aposentadas</h2>
+    <ul class="rows">
+      <li><span class="sev sev-l">EASY</span><span class="name fill">[nome]</span><span class="tags fill">Linux · [vetor]</span></li>
+      <li><span class="sev sev-m">MED</span><span class="name fill">[nome]</span><span class="tags fill">Windows · AD</span></li>
+    </ul>
+    <p class="fine" data-en="Link each row to its writeup once written.">Ligue cada linha ao seu writeup quando ele existir.</p>
+  </section>
+
+  <!-- ══════════ EXPERIÊNCIA ══════════ -->
+  <section class="view" id="v-experiencia" data-title-pt="Experiência" data-title-en="Experience" hidden>
+    <p class="eyebrow" data-en="Track record">Trajetória</p>
+    <h1 data-en="Experience">Experiência</h1>
+    <p class="lede" data-en="Six years in IT operations before the move into security: the same systems, seen from the side that has to keep them running.">Seis anos em operação de TI antes da virada para segurança: os mesmos sistemas, vistos pelo lado de quem precisa mantê-los de pé.</p>
+
     <div class="tl">
       <article class="job">
         <div class="when"><span data-en="Apr 2025">abr 2025</span> — <span data-en="present">atual</span></div>
@@ -200,15 +480,15 @@
           </ul>
         </div>
       </article>
-      <p class="fine" data-en="Six years in IT operations before the move into security: the same systems, seen from the side that has to keep them running.">Seis anos em operação de TI antes da virada para segurança: os mesmos sistemas, vistos pelo lado de quem precisa mantê-los de pé.</p>
     </div>
   </section>
 
-  <section>
-    <div class="sec-head">
-      <span class="sec-id">05</span>
-      <h2 data-en="Toolkit">Ferramental</h2>
-    </div>
+  <!-- ══════════ FERRAMENTAL ══════════ -->
+  <section class="view" id="v-ferramental" data-title-pt="Ferramental" data-title-en="Toolkit" hidden>
+    <p class="eyebrow" data-en="Track record">Trajetória</p>
+    <h1 data-en="Toolkit">Ferramental</h1>
+    <p class="lede" data-en="Organised by attack phase, not alphabetically. A tool list says what you installed; a phase map says how you think.">Organizado por fase do ataque, não em ordem alfabética. Lista de ferramentas diz o que você instalou; mapa de fases diz como você pensa.</p>
+
     <div class="phases">
       <div class="phase">
         <div class="ph"><b data-en="Reconnaissance">Reconhecimento</b>TA0043</div>
@@ -233,28 +513,89 @@
     </div>
   </section>
 
-  <section class="last">
-    <div class="sec-head">
-      <span class="sec-id">06</span>
-      <h2 data-en="Contact">Contato</h2>
+  <!-- ══════════ SOBRE ══════════ -->
+  <section class="view" id="v-sobre" data-title-pt="Sobre" data-title-en="About" hidden>
+    <p class="eyebrow">whoami</p>
+    <h1 data-en="About">Sobre</h1>
+    <p class="lede" data-en="Artur Borges — 0xBGBGBG. Information security analyst in Passo Fundo, RS, heading for offensive security.">Artur Borges — 0xBGBGBG. Analista de segurança da informação em Passo Fundo, RS, com destino à segurança ofensiva.</p>
+
+    <p data-en="I spent six years in IT before moving into security, and that is not a preamble to the interesting part — it is the reason the offensive side makes sense to me. I have been on the other end of the ticket: the one who had to keep the server up, get the network back, explain to a user why their access changed. When I read a finding today, I read it knowing what it costs to fix.">Passei seis anos em TI antes de migrar para segurança, e isso não é o prefácio da parte interessante — é a razão de o lado ofensivo fazer sentido para mim. Já estive na outra ponta do chamado: quem precisava manter o servidor de pé, restabelecer a rede, explicar ao usuário por que o acesso dele mudou. Quando leio um achado hoje, leio sabendo quanto custa corrigir.</p>
+
+    <p data-en="Right now I work on vulnerability scanning and exposure analysis, and I am preparing for the OSCP. The goal is a red team position.">Hoje trabalho com varredura de vulnerabilidades e análise de exposição, e estou em preparação para o OSCP. O objetivo é uma posição em red team.</p>
+
+    <h2 class="sub-h" data-en="Focus">Foco</h2>
+    <div class="tools">
+      <span class="tool">Active Directory</span>
+      <span class="tool">Pentest</span>
+      <span class="tool">Web Security</span>
+      <span class="tool" data-en="Vulnerability exploitation">Exploração de vulnerabilidades</span>
+      <span class="tool" data-en="Reporting">Relatório</span>
     </div>
-    <p data-en="Open to conversations about red team, pentest and offensive security roles.">Aberto a conversas sobre vagas de red team, pentest e segurança ofensiva.</p>
+
+    <h2 class="sub-h" data-en="Disclaimer">Aviso</h2>
+    <p data-en="Everything published here is for educational purposes and authorised environments only. Nothing here describes systems, findings or data belonging to any employer, client or production environment.">Todo o conteúdo publicado aqui é destinado exclusivamente a fins educacionais e a ambientes autorizados. Nada aqui descreve sistemas, achados ou dados de qualquer empregador, cliente ou ambiente de produção.</p>
+  </section>
+
+  <!-- ══════════ WRITEUPS ══════════ -->
+  <section class="view" id="v-writeups" data-title-pt="Writeups" data-title-en="Writeups" hidden>
+    <p class="eyebrow" data-en="Library">Conteúdo</p>
+    <h1>Writeups</h1>
+    <p class="lede" data-en="Retired machines and labs only, following each platform's disclosure policy.">Apenas máquinas e labs aposentados, seguindo a política de divulgação de cada plataforma.</p>
+
+    <div class="empty">
+      <p data-en="No writeup published yet. The template used for each one lives in the repository at writeups/TEMPLATE.md — it follows a pentest report structure: enumeration, vector with CWE and CVSS, proof, remediation, and what was learned.">Nenhum writeup publicado ainda. O modelo usado em cada um está no repositório, em writeups/TEMPLATE.md — ele segue a estrutura de um relatório de pentest: enumeração, vetor com CWE e CVSS, prova, remediação e o que foi aprendido.</p>
+    </div>
+
+    <p class="note" data-en="The remediation section is the one almost everyone skips, and that is exactly why it is worth writing. A pentest without a recommendation is just a documented break-in.">A seção de remediação é a que quase todo mundo pula, e é justamente por isso que vale escrevê-la. Pentest sem recomendação é só invasão documentada.</p>
+  </section>
+
+  <!-- ══════════ NOTAS ══════════ -->
+  <section class="view" id="v-notas" data-title-pt="Notas" data-title-en="Notes" hidden>
+    <p class="eyebrow" data-en="Library">Conteúdo</p>
+    <h1 data-en="Notes">Notas</h1>
+    <p class="lede" data-en="Study notes on offensive security — commands, techniques and things worth not looking up twice.">Anotações de estudo em segurança ofensiva — comandos, técnicas e coisas que não vale procurar duas vezes.</p>
+
+    <div class="empty">
+      <p data-en="Nothing published yet.">Nada publicado ainda.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ FERRAMENTAS ══════════ -->
+  <section class="view" id="v-ferramentas" data-title-pt="Ferramentas" data-title-en="Tools" hidden>
+    <p class="eyebrow" data-en="Library">Conteúdo</p>
+    <h1 data-en="Tools">Ferramentas</h1>
+    <p class="lede" data-en="Scripts and small tools written during labs and study.">Scripts e pequenas ferramentas escritas durante laboratórios e estudo.</p>
+
+    <div class="empty">
+      <p data-en="Nothing published yet. This is the section that separates a candidate who uses tools from one who writes them — even a 40-line script counts.">Nada publicado ainda. Esta é a seção que separa quem usa ferramenta de quem escreve ferramenta — até um script de 40 linhas conta.</p>
+    </div>
+  </section>
+
+  <!-- ══════════ CONTATO ══════════ -->
+  <section class="view" id="v-contato" data-title-pt="Contato" data-title-en="Contact" hidden>
+    <p class="eyebrow" data-en="Contact">Contato</p>
+    <h1 data-en="Get in touch">Vamos conversar</h1>
+    <p class="lede" data-en="Open to conversations about red team, pentest and offensive security roles.">Aberto a conversas sobre vagas de red team, pentest e segurança ofensiva.</p>
+
     <div class="contact">
       <span class="mail" id="mail">arturborges.contato@gmail.com</span>
       <button class="copy" id="copy" type="button" data-en="Copy">Copiar</button>
     </div>
 
-    <div class="draft">
-      <b data-en="DRAFT — delete this box before the first push.">RASCUNHO — apague esta caixa antes do primeiro push.</b><br>
-      <span data-en="Only section 04 is left: role, company, period and results.">Falta só a seção 04: cargo, empresa, período e resultados.</span>
+    <div class="meta">
+      <a class="chip" href="https://www.linkedin.com/in/arturborgges/">LinkedIn ↗</a>
+      <a class="chip" href="https://github.com/0xBGBGBG">GitHub ↗</a>
+      <a class="chip" href="https://profile.hackthebox.com/profile/019e2c5e-b1eb-7093-b9fa-ec20945bbefb">Hack The Box ↗</a>
+      <a class="chip" href="/.well-known/security.txt">security.txt ↗</a>
     </div>
+
+    <p class="fine">
+      <span data-en="Last updated">Última atualização</span> <span data-updated></span> ·
+      <span data-en="Static page, no trackers, no cookies">Página estática, sem rastreadores, sem cookies</span>
+    </p>
   </section>
 
-  <footer>
-    <span data-en="Last updated">Última atualização</span> <span id="updated"></span> ·
-    <span data-en="Static page, no trackers">Página estática, sem rastreadores</span> ·
-    <a href="/.well-known/security.txt">security.txt</a>
-  </footer>
+  </main>
 </div>
 
 <script src="/assets/js/cv.js"></script>
