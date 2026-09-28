@@ -1,0 +1,7 @@
+# RFC 9116 — canal de contato para relato de vulnerabilidades neste site.
+# Trocar o e-mail e revisar a data de Expires uma vez por ano.
+
+Contact: mailto:arturborges.contato@gmail.com
+Expires: 2027-09-28T00:00:00.000Z
+Preferred-Languages: pt-BR, en
+Canonical: https://0xbgbgbg.github.io/.well-known/security.txt

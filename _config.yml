@@ -1,0 +1,35 @@
+title: 0xBGBGBG
+description: Offensive Security | Pentest | Writeups
+
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: dark
+
+url: https://0xbgbgbg.github.io
+
+plugins:
+  - jekyll-remote-theme
+  - jekyll-sitemap
+
+search_enabled: true
+heading_anchors: true
+
+back_to_top: true
+back_to_top_text: "Voltar ao topo"
+
+footer_content: "0xBGBGBG - Offensive Security Portfolio"
+
+gh_edit_link: false
+
+aux_links:
+  "Currículo": "/"
+  "GitHub": "https://github.com/0xBGBGBG"
+
+# O Jekyll ignora pastas que começam com ponto. Sem esta linha,
+# o /.well-known/security.txt não sobe.
+include:
+  - .well-known
+
+exclude:
+  - INSTRUCOES.md
+  - README.md
