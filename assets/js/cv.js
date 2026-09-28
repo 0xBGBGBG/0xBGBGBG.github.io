@@ -57,12 +57,15 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
   var i18n = document.querySelectorAll("[data-en]");
   each(i18n, function (el) { el.setAttribute("data-pt", el.textContent); });
 
+  var langBtns = document.querySelectorAll("[data-lang]");
+
   function setLang(next) {
     lang = next;
     each(i18n, function (el) { el.textContent = el.getAttribute("data-" + next); });
     document.documentElement.lang = next === "pt" ? "pt-BR" : "en";
-    document.getElementById("btn-pt").setAttribute("aria-pressed", String(next === "pt"));
-    document.getElementById("btn-en").setAttribute("aria-pressed", String(next === "en"));
+    each(langBtns, function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === next));
+    });
     var copyBtn = document.getElementById("copy");
     if (copyBtn) { copyBtn.textContent = strings[next].copy; }
     renderDates();
@@ -153,8 +156,9 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
 
   /* ── início ────────────────────────────────────────────── */
 
-  document.getElementById("btn-pt").addEventListener("click", function () { setLang("pt"); });
-  document.getElementById("btn-en").addEventListener("click", function () { setLang("en"); });
+  each(langBtns, function (b) {
+    b.addEventListener("click", function () { setLang(b.getAttribute("data-lang")); });
+  });
 
   var saved = null;
   try { saved = localStorage.getItem("lang"); } catch (e) { /* storage bloqueado */ }

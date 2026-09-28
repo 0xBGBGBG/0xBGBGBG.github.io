@@ -22,6 +22,10 @@
 <div class="bar">
   <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="rail">Menu</button>
   <span class="nm">Artur Borges</span>
+  <div class="switch" role="group" aria-label="Idioma / Language">
+    <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+    <button type="button" data-lang="en" aria-pressed="false">EN</button>
+  </div>
 </div>
 <div class="scrim" id="scrim" hidden></div>
 
@@ -29,8 +33,16 @@
 
   <aside class="rail" id="rail">
     <div class="brand">
-      <span class="nm">Artur Borges</span>
-      <span class="hd">0xBGBGBG</span>
+      <div class="brand-row">
+        <span class="who">
+          <span class="nm">Artur Borges</span>
+          <span class="hd">0xBGBGBG</span>
+        </span>
+        <div class="switch" role="group" aria-label="Idioma / Language">
+          <button type="button" data-lang="pt" aria-pressed="true">PT</button>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+      </div>
       <span class="rl" data-en="Offensive Security">Segurança Ofensiva</span>
     </div>
 
@@ -71,10 +83,6 @@
     </nav>
 
     <div class="rail-foot">
-      <div class="switch" role="group" aria-label="Idioma / Language">
-        <button id="btn-pt" type="button" aria-pressed="true">PT</button>
-        <button id="btn-en" type="button" aria-pressed="false">EN</button>
-      </div>
       <div class="out">
         <a href="https://github.com/0xBGBGBG">GitHub ↗</a>
         <a href="https://www.linkedin.com/in/arturborgges/">LinkedIn ↗</a>

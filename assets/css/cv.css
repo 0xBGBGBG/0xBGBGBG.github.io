@@ -76,12 +76,15 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
   padding:22px 0 18px;
 }
 .brand{padding:0 20px 18px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.brand-row{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.brand .who{min-width:0}
 .brand .nm{font-size:1.05rem;font-weight:700;letter-spacing:-.015em;display:block}
 .brand .hd{font-family:var(--font-mono);font-size:12px;color:var(--muted);display:block;margin-top:1px}
 .brand .rl{
   font-family:var(--font-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
   color:var(--signal);display:block;margin-top:9px;
 }
+.brand .switch{flex:none;margin-top:2px}
 
 nav.tree{flex:1;padding:0 12px}
 .grp{margin-bottom:3px}
@@ -116,7 +119,7 @@ nav.tree{flex:1;padding:0 12px}
 .switch{display:inline-flex;border:1px solid var(--line);border-radius:999px;overflow:hidden;background:var(--surface);align-self:flex-start}
 .switch button{
   font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;
-  padding:5px 12px;border:0;background:transparent;color:var(--muted);cursor:pointer;
+  padding:5px 11px;border:0;background:transparent;color:var(--muted);cursor:pointer;
 }
 .switch button[aria-pressed="true"]{background:var(--ink);color:var(--surface)}
 .out{display:flex;flex-wrap:wrap;gap:6px}
