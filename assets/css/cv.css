@@ -281,3 +281,14 @@ a.card:hover{border-color:var(--ink)}
   .job{grid-template-columns:minmax(0,1fr);gap:8px}
   .phase{grid-template-columns:minmax(0,1fr);gap:6px}
 }
+
+/* certificado */
+.cert{margin:22px 0 0;max-width:640px}
+.cert a{display:block;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--surface);line-height:0}
+.cert a:hover{border-color:var(--ink)}
+.cert img{display:block;width:100%;height:auto}
+.cert figcaption{margin-top:9px;font-size:.85rem;color:var(--muted);line-height:1.5}
+.code{
+  font-family:var(--font-mono);font-size:.85rem;background:var(--surface);
+  border:1px solid var(--line);border-radius:2px;padding:1px 6px;user-select:all;
+}
