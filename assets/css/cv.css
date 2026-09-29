@@ -283,9 +283,7 @@ a.card:hover{border-color:var(--ink)}
 }
 
 /* certificado — coluna à direita dos domínios, ampliável */
-.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:32px;align-items:start}
-.split .phase{grid-template-columns:160px minmax(0,1fr)}
-.cert{margin:0;min-width:0}
+.cert{margin:22px 0 6px;max-width:560px;min-width:0}
 .cert a{
   display:block;border:1px solid var(--line);border-radius:4px;overflow:hidden;
   background:var(--surface);line-height:0;cursor:zoom-in;
@@ -316,8 +314,6 @@ a.card:hover{border-color:var(--ink)}
 .lb-x:hover{background:rgba(255,255,255,.2)}
 
 @media (max-width:860px){
-  .split{grid-template-columns:minmax(0,1fr);gap:22px}
-  .split .phase{grid-template-columns:minmax(0,1fr)}
-  .cert{max-width:420px}
+  .cert{max-width:100%}
   .lb{padding:14px}
 }
