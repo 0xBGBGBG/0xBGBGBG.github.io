@@ -145,7 +145,7 @@ nav.tree{flex:1;padding:0 12px}
 .scrim{display:none}
 
 main{min-width:0;padding:0 clamp(20px,4vw,56px) 80px}
-.view{max-width:820px;padding-top:46px}
+.view{max-width:980px;padding-top:46px}
 
 /* ─────────── tipografia ─────────── */
 .eyebrow{
@@ -283,8 +283,8 @@ a.card:hover{border-color:var(--ink)}
 }
 
 /* certificado — coluna à direita dos domínios, ampliável */
-.split{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;align-items:start}
-.split .phase{grid-template-columns:150px minmax(0,1fr)}
+.split{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,400px);gap:32px;align-items:start}
+.split .phase{grid-template-columns:160px minmax(0,1fr)}
 .cert{margin:0;min-width:0}
 .cert a{
   display:block;border:1px solid var(--line);border-radius:4px;overflow:hidden;
