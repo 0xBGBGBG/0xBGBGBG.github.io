@@ -371,3 +371,28 @@ h1 + .meta{margin-top:16px}
 .pose-root{background-image:url(/assets/img/pose-root.png)}
 .pose-term{background-image:url(/assets/img/pose-term.png)}
 .pose-flag{background-image:url(/assets/img/pose-flag.png)}
+
+/* 0xB conversando — animação da seção Contato */
+.chat-anim{
+  width:288px;height:176px;margin:26px 0 4px;
+  background-image:url(/assets/img/chat.png);
+  background-repeat:no-repeat;
+  background-size:4032px 176px;
+  image-rendering:pixelated;
+  animation:chat 4.9s steps(14) infinite;
+}
+@keyframes chat{from{background-position:0 0}to{background-position:-4032px 0}}
+@media (max-width:420px){
+  .chat-anim{
+    width:216px;height:132px;
+    background-size:3024px 132px;
+    animation-name:chat-s;
+  }
+  @keyframes chat-s{from{background-position:0 0}to{background-position:-3024px 0}}
+}
+@media (prefers-reduced-motion:reduce){
+  .chat-anim{animation:none;background-position:-3744px 0}
+}
+@media (prefers-reduced-motion:reduce) and (max-width:420px){
+  .chat-anim{background-position:-2808px 0}
+}
