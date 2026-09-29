@@ -428,3 +428,28 @@ h1 + .meta{margin-top:16px}
   .badge:focus .tip{display:block}
   .badge{width:100%}
 }
+
+/* pixels caindo ao fundo — três camadas, velocidades diferentes, bem discretas */
+.fall{
+  position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url(/assets/img/fall-1.png),url(/assets/img/fall-2.png),url(/assets/img/fall-3.png);
+  background-repeat:repeat,repeat,repeat;
+  background-size:160px 160px,220px 220px,300px 300px;
+  image-rendering:pixelated;
+  opacity:.10;
+  animation:fall 26s linear infinite;
+  will-change:background-position;
+}
+@keyframes fall{
+  from{background-position:0 0,0 0,0 0}
+  to  {background-position:0 160px,0 220px,0 300px}
+}
+:root[data-theme="dark"] .fall{opacity:.13}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .fall{opacity:.13}
+}
+.shell{position:relative;z-index:1}
+.bar{z-index:30}
+@media (prefers-reduced-motion:reduce){
+  .fall{animation:none;opacity:.07}
+}
