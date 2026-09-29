@@ -1,9 +1,9 @@
-# 0xBGBGBG.github.io
+# hacktheborges.github.io
 
 Portfólio de segurança ofensiva de **Artur Borges** — currículo, certificações,
-laboratórios, notas e writeups.
+laboratórios e writeups.
 
-**No ar em:** https://0xbgbgbg.github.io
+**No ar em:** https://hacktheborges.github.io
 
 ---
 
@@ -37,7 +37,8 @@ Bilíngue PT/EN: o português fica no conteúdo do elemento, o inglês no atribu
 **Nova seção:** um `<a href="#slug">` na coluna e uma
 `<section class="view" id="v-slug" hidden>` no `<main>`.
 
-**Novo writeup:** copie `writeups/TEMPLATE.md` e ligue a partir da seção Writeups.
+**Novo writeup:** copie `writeups/TEMPLATE.md` e ligue a partir da seção da plataforma
+correspondente (Proving Grounds Play, Practice ou HTB Máquinas).
 
 Todo push na branch `main` republica o site.
 
