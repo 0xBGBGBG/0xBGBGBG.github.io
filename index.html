@@ -52,6 +52,7 @@
 
     <nav class="tree" aria-label="Seções">
       <a class="top" href="#curriculo" data-en="CV">Currículo</a>
+      <a class="top" href="#contato" data-en="Contact">Contato</a>
 
       <details class="grp" open>
         <summary data-en="Certifications">Certificações</summary>
@@ -76,14 +77,8 @@
         <a href="#sobre" data-en="About">Sobre</a>
       </details>
 
-      <details class="grp" open>
-        <summary data-en="Library">Conteúdo</summary>
-        <a href="#writeups">Writeups</a>
-        <a href="#notas" data-en="Notes">Notas</a>
-        <a href="#ferramentas" data-en="Tools">Ferramentas</a>
-      </details>
-
-      <a class="top" href="#contato" data-en="Contact">Contato</a>
+      <a class="top" href="#notas" data-en="Notes">Notas</a>
+      <a class="top" href="#scripts">Scripts</a>
     </nav>
 
     <div class="rail-foot">
@@ -173,6 +168,18 @@
           </ul>
         </div>
       </article>
+    </div>
+
+    <h2 class="sub-h" data-en="Contact">Contato</h2>
+    <div class="contact">
+      <span class="mail" data-mail>arturborges.contato@gmail.com</span>
+      <button class="copy" type="button" data-copy data-en="Copy">Copiar</button>
+    </div>
+    <div class="meta">
+      <a class="chip" href="https://www.linkedin.com/in/arturborgges/">LinkedIn ↗</a>
+      <a class="chip" href="https://github.com/0xBGBGBG">GitHub ↗</a>
+      <a class="chip" href="https://profile.hackthebox.com/profile/019e2c5e-b1eb-7093-b9fa-ec20945bbefb">Hack The Box ↗</a>
+      <a class="chip" href="https://portal.offsec.com/public-profile/de8b0b16-ad26-3aa0-ad2f-3c49183ca217">OffSec ↗</a>
     </div>
   </section>
 
@@ -397,6 +404,9 @@
       </a>
     </div>
 
+    <h2 class="sub-h" data-en="How the writeups are written">Como os writeups são escritos</h2>
+    <p data-en="Each writeup lives inside its platform's section, and follows a pentest report structure: enumeration, vector with CWE and CVSS, proof, remediation, and what was learned. The remediation section is the one almost everyone skips, and that is exactly why it is worth writing — a pentest without a recommendation is just a documented break-in.">Cada writeup fica dentro da seção da sua plataforma, e segue a estrutura de um relatório de pentest: enumeração, vetor com CWE e CVSS, prova, remediação e o que foi aprendido. A seção de remediação é a que quase todo mundo pula, e é justamente por isso que vale escrevê-la — pentest sem recomendação é só invasão documentada.</p>
+
     <h2 class="sub-h" data-en="Profile levels">Níveis de perfil</h2>
     <div class="meta">
       <span class="chip">OffSec · <span data-en="level">nível</span> 31 · 25 badges</span>
@@ -416,13 +426,13 @@
       <div class="stat"><div class="v fill">[--]</div><div class="k">Windows</div></div>
     </div>
 
-    <h2 class="sub-h" data-en="Machines">Máquinas</h2>
+    <h2 class="sub-h" data-en="Machines &amp; writeups">Máquinas e writeups</h2>
     <ul class="rows">
       <li><span class="sev sev-l">EASY</span><span class="name fill">[nome]</span><span class="tags fill">Linux · [vetor]</span></li>
       <li><span class="sev sev-m">MED</span><span class="name fill">[nome]</span><span class="tags fill">Windows · [vetor]</span></li>
       <li><span class="sev sev-c">HARD</span><span class="name fill">[nome]</span><span class="tags fill">Linux · [vetor]</span></li>
     </ul>
-    <p class="fine" data-en="Add one row per machine. Keep the severity chip matching the machine's own difficulty rating.">Adicione uma linha por máquina. Mantenha a etiqueta de severidade igual à dificuldade da própria máquina.</p>
+    <p class="fine" data-en="Machines whose name is a link have a published writeup. Play machines come from the community, so their walkthroughs can be shared.">Máquinas com o nome em link têm writeup publicado. As máquinas do Play vêm da comunidade, então os walkthroughs podem ser divulgados.</p>
   </section>
 
   <!-- ══════════ PG PRACTICE ══════════ -->
@@ -437,13 +447,13 @@
       <div class="stat"><div class="v fill">[--]</div><div class="k" data-en="under 24h">Em menos de 24h</div></div>
     </div>
 
-    <h2 class="sub-h" data-en="Machines">Máquinas</h2>
+    <h2 class="sub-h" data-en="Machines &amp; writeups">Máquinas e writeups</h2>
     <ul class="rows">
       <li><span class="sev sev-l">EASY</span><span class="name fill">[nome]</span><span class="tags fill">Linux · [vetor]</span></li>
       <li><span class="sev sev-m">MED</span><span class="name fill">[nome]</span><span class="tags fill">Windows · [vetor]</span></li>
       <li><span class="sev sev-c">HARD</span><span class="name fill">[nome]</span><span class="tags fill">AD · [vetor]</span></li>
     </ul>
-    <p class="fine" data-en="The 'with report' column is the one a hiring manager reads. Writing it is the habit the exam grades.">A coluna 'com relatório' é a que um gestor de contratação lê. Escrevê-lo é o hábito que o exame avalia.</p>
+    <p class="fine" data-en="Writeups are published only for machines whose disclosure OffSec permits. Every run here is done under the exam's 24-hour constraint and finished with a written report, published or not.">Writeups são publicados apenas das máquinas cuja divulgação a OffSec permite. Toda sessão aqui é feita sob a restrição de 24 horas do exame e termina com relatório escrito, publicado ou não.</p>
   </section>
 
   <!-- ══════════ HTB ACADEMY ══════════ -->
@@ -506,12 +516,12 @@
       <a class="chip" href="https://profile.hackthebox.com/profile/019e2c5e-b1eb-7093-b9fa-ec20945bbefb"><span data-en="public profile">perfil público</span> ↗</a>
     </div>
 
-    <h2 class="sub-h" data-en="Retired machines">Máquinas aposentadas</h2>
+    <h2 class="sub-h" data-en="Retired machines &amp; writeups">Máquinas aposentadas e writeups</h2>
     <ul class="rows">
       <li><span class="sev sev-l">EASY</span><span class="name fill">[nome]</span><span class="tags fill">Linux · [vetor]</span></li>
       <li><span class="sev sev-m">MED</span><span class="name fill">[nome]</span><span class="tags fill">Windows · AD</span></li>
     </ul>
-    <p class="fine" data-en="Link each row to its writeup once written.">Ligue cada linha ao seu writeup quando ele existir.</p>
+    <p class="fine" data-en="Machines whose name is a link have a published writeup. Retired machines only, following Hack The Box's disclosure policy.">Máquinas com o nome em link têm writeup publicado. Apenas máquinas aposentadas, seguindo a política de divulgação da Hack The Box.</p>
   </section>
 
   <!-- ══════════ EXPERIÊNCIA ══════════ -->
@@ -600,22 +610,9 @@
     <p data-en="Everything published here is for educational purposes and authorised environments only. Nothing here describes systems, findings or data belonging to any employer, client or production environment.">Todo o conteúdo publicado aqui é destinado exclusivamente a fins educacionais e a ambientes autorizados. Nada aqui descreve sistemas, achados ou dados de qualquer empregador, cliente ou ambiente de produção.</p>
   </section>
 
-  <!-- ══════════ WRITEUPS ══════════ -->
-  <section class="view" id="v-writeups" data-title-pt="Writeups" data-title-en="Writeups" hidden>
-    <p class="eyebrow" data-en="Library">Conteúdo</p>
-    <h1>Writeups</h1>
-    <p class="lede" data-en="Retired machines and labs only, following each platform's disclosure policy.">Apenas máquinas e labs aposentados, seguindo a política de divulgação de cada plataforma.</p>
-
-    <div class="empty">
-      <p data-en="No writeup published yet. The template used for each one lives in the repository at writeups/TEMPLATE.md — it follows a pentest report structure: enumeration, vector with CWE and CVSS, proof, remediation, and what was learned.">Nenhum writeup publicado ainda. O modelo usado em cada um está no repositório, em writeups/TEMPLATE.md — ele segue a estrutura de um relatório de pentest: enumeração, vetor com CWE e CVSS, prova, remediação e o que foi aprendido.</p>
-    </div>
-
-    <p class="note" data-en="The remediation section is the one almost everyone skips, and that is exactly why it is worth writing. A pentest without a recommendation is just a documented break-in.">A seção de remediação é a que quase todo mundo pula, e é justamente por isso que vale escrevê-la. Pentest sem recomendação é só invasão documentada.</p>
-  </section>
-
   <!-- ══════════ NOTAS ══════════ -->
   <section class="view" id="v-notas" data-title-pt="Notas" data-title-en="Notes" hidden>
-    <p class="eyebrow" data-en="Library">Conteúdo</p>
+    <p class="eyebrow" data-en="Library">Biblioteca</p>
     <h1 data-en="Notes">Notas</h1>
     <p class="lede" data-en="Study notes on offensive security — commands, techniques and things worth not looking up twice.">Anotações de estudo em segurança ofensiva — comandos, técnicas e coisas que não vale procurar duas vezes.</p>
 
@@ -624,10 +621,10 @@
     </div>
   </section>
 
-  <!-- ══════════ FERRAMENTAS ══════════ -->
-  <section class="view" id="v-ferramentas" data-title-pt="Ferramentas" data-title-en="Tools" hidden>
-    <p class="eyebrow" data-en="Library">Conteúdo</p>
-    <h1 data-en="Tools">Ferramentas</h1>
+  <!-- ══════════ SCRIPTS ══════════ -->
+  <section class="view" id="v-scripts" data-title-pt="Scripts" data-title-en="Scripts" hidden>
+    <p class="eyebrow" data-en="Library">Biblioteca</p>
+    <h1>Scripts</h1>
     <p class="lede" data-en="Scripts and small tools written during labs and study.">Scripts e pequenas ferramentas escritas durante laboratórios e estudo.</p>
 
     <div class="empty">
@@ -642,8 +639,8 @@
     <p class="lede" data-en="Open to conversations about red team, pentest and offensive security roles.">Aberto a conversas sobre vagas de red team, pentest e segurança ofensiva.</p>
 
     <div class="contact">
-      <span class="mail" id="mail">arturborges.contato@gmail.com</span>
-      <button class="copy" id="copy" type="button" data-en="Copy">Copiar</button>
+      <span class="mail" data-mail>arturborges.contato@gmail.com</span>
+      <button class="copy" type="button" data-copy data-en="Copy">Copiar</button>
     </div>
 
     <div class="meta">
