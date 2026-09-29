@@ -453,3 +453,8 @@ h1 + .meta{margin-top:16px}
 @media (prefers-reduced-motion:reduce){
   .fall{animation:none;opacity:.07}
 }
+
+/* nome de máquina com writeup publicado — vira link */
+.rows a.name.link{color:var(--signal);text-decoration:none;font-weight:600}
+.rows a.name.link::after{content:" ↗";font-family:var(--font-mono);font-size:.85em}
+.rows a.name.link:hover{text-decoration:underline;text-underline-offset:2px}
