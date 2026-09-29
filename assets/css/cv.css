@@ -317,3 +317,23 @@ a.card:hover{border-color:var(--ink)}
   .cert{max-width:100%}
   .lb{padding:14px}
 }
+
+/* Road to — trajeto até a certificação, com o personagem em pixel */
+.road{display:grid;grid-template-columns:132px minmax(0,1fr);gap:22px;align-items:start}
+.road .empty{margin:0}
+.pixel{
+  width:120px;height:120px;flex:none;
+  background-image:url(/assets/img/hatch.png);
+  background-repeat:no-repeat;
+  background-size:1920px 120px;
+  image-rendering:pixelated;
+  image-rendering:crisp-edges;
+  animation:hatch 3.2s steps(16) infinite;
+}
+@keyframes hatch{from{background-position:0 0}to{background-position:-1920px 0}}
+@media (prefers-reduced-motion:reduce){
+  .pixel{animation:none;background-position:-1800px 0}
+}
+@media (max-width:860px){
+  .road{grid-template-columns:minmax(0,1fr);gap:14px;justify-items:start}
+}
