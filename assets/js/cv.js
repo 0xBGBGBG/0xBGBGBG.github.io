@@ -57,11 +57,16 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
   var i18n = document.querySelectorAll("[data-en]");
   each(i18n, function (el) { el.setAttribute("data-pt", el.textContent); });
 
+  /* blocos com marcacao interna (links) trocam innerHTML, nao textContent */
+  var i18nHtml = document.querySelectorAll("[data-en-html]");
+  each(i18nHtml, function (el) { el.setAttribute("data-pt-html", el.innerHTML); });
+
   var langBtns = document.querySelectorAll("[data-lang]");
 
   function setLang(next) {
     lang = next;
     each(i18n, function (el) { el.textContent = el.getAttribute("data-" + next); });
+    each(i18nHtml, function (el) { el.innerHTML = el.getAttribute("data-" + next + "-html"); });
     document.documentElement.lang = next === "pt" ? "pt-BR" : "en";
     each(langBtns, function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === next));
