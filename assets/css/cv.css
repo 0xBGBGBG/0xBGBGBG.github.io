@@ -87,20 +87,22 @@ a:focus-visible,button:focus-visible,summary:focus-visible{
 .brand .switch{flex:none;margin-top:2px}
 
 nav.tree{flex:1;padding:0 12px}
-.grp{margin-bottom:3px}
+.grp{margin:2px 0;border-top:1px solid var(--line)}
+.grp:first-of-type{border-top:0}
 .grp>summary{
   list-style:none;cursor:pointer;
-  font-family:var(--font-mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;
-  color:var(--muted);padding:9px 8px;display:flex;align-items:center;gap:7px;border-radius:3px;
+  font-family:var(--font-mono);font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink);padding:12px 8px;display:flex;align-items:center;gap:9px;border-radius:3px;
 }
 .grp>summary::-webkit-details-marker{display:none}
-.grp>summary:hover{color:var(--ink)}
+.grp>summary:hover{background:var(--surface)}
 .grp>summary::before{
   content:"";width:0;height:0;flex:none;
-  border-left:4px solid currentColor;border-top:3.5px solid transparent;border-bottom:3.5px solid transparent;
+  border-left:5px solid var(--signal);border-top:4px solid transparent;border-bottom:4px solid transparent;
   transition:transform .15s ease;
 }
 .grp[open]>summary::before{transform:rotate(90deg)}
+.grp[open]{padding-bottom:6px}
 
 .tree a{
   display:block;text-decoration:none;
