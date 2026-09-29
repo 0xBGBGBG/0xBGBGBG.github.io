@@ -126,7 +126,9 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
   });
   scrim.addEventListener("click", closeRail);
   document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") { closeRail(); }
+    if (e.key !== "Escape") { return; }
+    closeRail();
+    if (!document.getElementById("lb").hidden) { closeLb(); }
   });
 
   /* ── copiar e-mail ─────────────────────────────────────── */
@@ -153,6 +155,38 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
       }
     });
   }
+
+  /* ── ampliar imagem ────────────────────────────────────── */
+
+  var lb = document.getElementById("lb");
+  var lbImg = document.getElementById("lb-img");
+  var lastZoom = null;
+
+  function openLb(href, alt) {
+    lbImg.setAttribute("src", href);
+    lbImg.setAttribute("alt", alt || "");
+    lb.hidden = false;
+    document.getElementById("lb-x").focus();
+  }
+  function closeLb() {
+    lb.hidden = true;
+    lbImg.removeAttribute("src");
+    if (lastZoom) { lastZoom.focus(); }
+  }
+
+  each(document.querySelectorAll("a[data-zoom]"), function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      lastZoom = a;
+      var img = a.querySelector("img");
+      openLb(a.getAttribute("href"), img ? img.getAttribute("alt") : "");
+    });
+  });
+
+  lb.addEventListener("click", function (e) {
+    if (e.target === lbImg) { return; }
+    closeLb();
+  });
 
   /* ── início ────────────────────────────────────────────── */
 

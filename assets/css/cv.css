@@ -282,13 +282,42 @@ a.card:hover{border-color:var(--ink)}
   .phase{grid-template-columns:minmax(0,1fr);gap:6px}
 }
 
-/* certificado */
-.cert{margin:22px 0 0;max-width:640px}
-.cert a{display:block;border:1px solid var(--line);border-radius:4px;overflow:hidden;background:var(--surface);line-height:0}
+/* certificado — coluna à direita dos domínios, ampliável */
+.split{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:28px;align-items:start}
+.split .phase{grid-template-columns:150px minmax(0,1fr)}
+.cert{margin:0;min-width:0}
+.cert a{
+  display:block;border:1px solid var(--line);border-radius:4px;overflow:hidden;
+  background:var(--surface);line-height:0;cursor:zoom-in;
+}
 .cert a:hover{border-color:var(--ink)}
 .cert img{display:block;width:100%;height:auto}
-.cert figcaption{margin-top:9px;font-size:.85rem;color:var(--muted);line-height:1.5}
+.cert figcaption{
+  margin-top:8px;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--muted);
+}
 .code{
-  font-family:var(--font-mono);font-size:.85rem;background:var(--surface);
-  border:1px solid var(--line);border-radius:2px;padding:1px 6px;user-select:all;
+  font-family:var(--font-mono);font-size:.82rem;color:var(--ink);
+  background:transparent;border:0;padding:0;user-select:all;
+}
+
+/* lightbox */
+.lb{
+  position:fixed;inset:0;z-index:60;background:rgba(6,9,12,.92);
+  display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out;
+}
+.lb img{max-width:100%;max-height:100%;width:auto;height:auto;border-radius:3px;cursor:default}
+.lb-x{
+  position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:16px;
+  font-family:var(--font-mono);font-size:15px;line-height:1;
+  background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.28);
+  width:38px;height:38px;border-radius:3px;cursor:pointer;
+}
+.lb-x:hover{background:rgba(255,255,255,.2)}
+
+@media (max-width:860px){
+  .split{grid-template-columns:minmax(0,1fr);gap:22px}
+  .split .phase{grid-template-columns:minmax(0,1fr)}
+  .cert{max-width:420px}
+  .lb{padding:14px}
 }
