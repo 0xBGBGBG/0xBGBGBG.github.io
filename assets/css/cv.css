@@ -346,3 +346,6 @@ a.card:hover{border-color:var(--ink)}
   font-family:var(--font-mono);font-size:1.05rem;letter-spacing:.02em;
   border-left:3px solid var(--signal);padding:10px 0 10px 14px;margin-top:4px;
 }
+
+/* quando não há linha de abertura, as etiquetas precisam de ar sob o título */
+h1 + .meta{margin-top:16px}
