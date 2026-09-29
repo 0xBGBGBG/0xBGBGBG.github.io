@@ -355,3 +355,19 @@ h1 + .meta{margin-top:16px}
 .rank-v{font-family:var(--font-mono);font-size:1.45rem;font-weight:600;color:var(--ok);line-height:1.1}
 .rank-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
 .track .chip{align-self:flex-start;margin-top:4px}
+
+/* marca e poses do personagem */
+.brand-av{
+  width:28px;height:28px;flex:none;margin-top:2px;
+  background:url(/assets/img/avatar-48.png) center/contain no-repeat;
+  image-rendering:pixelated;
+}
+.brand-row{flex-wrap:wrap}
+.pose{
+  width:120px;height:120px;flex:none;
+  background-repeat:no-repeat;background-position:center top;background-size:contain;
+  image-rendering:pixelated;
+}
+.pose-root{background-image:url(/assets/img/pose-root.png)}
+.pose-term{background-image:url(/assets/img/pose-term.png)}
+.pose-flag{background-image:url(/assets/img/pose-flag.png)}
