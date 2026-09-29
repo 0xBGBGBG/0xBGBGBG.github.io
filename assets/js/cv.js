@@ -1,6 +1,6 @@
 /* ── Ajuste estes dois valores ──────────────────────────────── */
 var EXAM_DATE = "2026-10-23";   /* data do exame OSCP (AAAA-MM-DD) */
-var UPDATED   = "2026-09-28";   /* data da última atualização      */
+var UPDATED   = "2026-09-29";   /* data da última atualização      */
 /* ───────────────────────────────────────────────────────────── */
 
 (function () {
@@ -14,6 +14,8 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
     en: { examOn: "Exam on ",  copy: "Copy",   copied: "Copied",  passed: "Exam taken" }
   };
   var lang = "pt";
+
+  function each(list, fn) { Array.prototype.forEach.call(list, fn); }
 
   var views  = document.querySelectorAll(".view");
   var links  = document.querySelectorAll("nav.tree a[href^='#']");
@@ -50,18 +52,17 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
     });
   }
 
-  function each(list, fn) { Array.prototype.forEach.call(list, fn); }
-
   /* ── idioma ────────────────────────────────────────────── */
 
   var i18n = document.querySelectorAll("[data-en]");
   each(i18n, function (el) { el.setAttribute("data-pt", el.textContent); });
 
-  /* blocos com marcacao interna (links) trocam innerHTML, nao textContent */
+  /* blocos com marcação interna (links) trocam innerHTML, não textContent */
   var i18nHtml = document.querySelectorAll("[data-en-html]");
   each(i18nHtml, function (el) { el.setAttribute("data-pt-html", el.innerHTML); });
 
   var langBtns = document.querySelectorAll("[data-lang]");
+  var copyBtns = document.querySelectorAll("[data-copy]");
 
   function setLang(next) {
     lang = next;
@@ -71,8 +72,7 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
     each(langBtns, function (b) {
       b.setAttribute("aria-pressed", String(b.getAttribute("data-lang") === next));
     });
-    var copyBtn = document.getElementById("copy");
-    if (copyBtn) { copyBtn.textContent = strings[next].copy; }
+    each(copyBtns, function (b) { b.textContent = strings[next].copy; });
     renderDates();
     route(current, true);
     try { localStorage.setItem("lang", next); } catch (e) { /* storage bloqueado */ }
@@ -136,30 +136,32 @@ var UPDATED   = "2026-09-28";   /* data da última atualização      */
     if (!document.getElementById("lb").hidden) { closeLb(); }
   });
 
-  /* ── copiar e-mail ─────────────────────────────────────── */
+  /* ── copiar e-mail (um bloco ou vários) ────────────────── */
 
-  var copyBtn = document.getElementById("copy");
-  var mail = document.getElementById("mail");
-  if (copyBtn && mail) {
-    var selectMail = function () {
+  each(copyBtns, function (btn) {
+    var mail = btn.parentNode.querySelector("[data-mail]");
+    if (!mail) { return; }
+
+    function selectMail() {
       var r = document.createRange();
       r.selectNodeContents(mail);
       var s = window.getSelection();
       s.removeAllRanges();
       s.addRange(r);
-    };
-    copyBtn.addEventListener("click", function () {
-      var done = function () {
-        copyBtn.textContent = strings[lang].copied;
-        setTimeout(function () { copyBtn.textContent = strings[lang].copy; }, 1600);
-      };
+    }
+
+    btn.addEventListener("click", function () {
+      function done() {
+        btn.textContent = strings[lang].copied;
+        setTimeout(function () { btn.textContent = strings[lang].copy; }, 1600);
+      }
       if (navigator.clipboard && navigator.clipboard.writeText) {
         navigator.clipboard.writeText(mail.textContent.trim()).then(done, selectMail);
       } else {
         selectMail();
       }
     });
-  }
+  });
 
   /* ── ampliar imagem ────────────────────────────────────── */
 
