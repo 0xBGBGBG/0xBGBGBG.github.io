@@ -372,27 +372,27 @@ h1 + .meta{margin-top:16px}
 .pose-term{background-image:url(/assets/img/pose-term.png)}
 .pose-flag{background-image:url(/assets/img/pose-flag.png)}
 
-/* 0xB conversando — animação da seção Contato */
+/* 0xB conversando com um recrutador — animação da seção Contato */
 .chat-anim{
-  width:288px;height:176px;margin:26px 0 4px;
+  width:352px;height:192px;margin:26px 0 4px;
   background-image:url(/assets/img/chat.png);
   background-repeat:no-repeat;
-  background-size:4032px 176px;
+  background-size:5632px 192px;
   image-rendering:pixelated;
-  animation:chat 4.9s steps(14) infinite;
+  animation:chat 6.4s steps(16) infinite;
 }
-@keyframes chat{from{background-position:0 0}to{background-position:-4032px 0}}
-@media (max-width:420px){
+@keyframes chat{from{background-position:0 0}to{background-position:-5632px 0}}
+@media (max-width:460px){
   .chat-anim{
-    width:216px;height:132px;
-    background-size:3024px 132px;
+    width:264px;height:144px;
+    background-size:4224px 144px;
     animation-name:chat-s;
   }
-  @keyframes chat-s{from{background-position:0 0}to{background-position:-3024px 0}}
+  @keyframes chat-s{from{background-position:0 0}to{background-position:-4224px 0}}
 }
 @media (prefers-reduced-motion:reduce){
-  .chat-anim{animation:none;background-position:-3744px 0}
+  .chat-anim{animation:none;background-position:-5280px 0}
 }
-@media (prefers-reduced-motion:reduce) and (max-width:420px){
-  .chat-anim{background-position:-2808px 0}
+@media (prefers-reduced-motion:reduce) and (max-width:460px){
+  .chat-anim{background-position:-3960px 0}
 }
