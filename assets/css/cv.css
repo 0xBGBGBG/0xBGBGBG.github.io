@@ -349,3 +349,9 @@ a.card:hover{border-color:var(--ink)}
 
 /* quando não há linha de abertura, as etiquetas precisam de ar sob o título */
 h1 + .meta{margin-top:16px}
+
+/* posição no ranking mundial da OffSec */
+.rank{display:flex;flex-direction:column;gap:1px;padding:10px 0 2px;border-top:1px solid var(--line)}
+.rank-v{font-family:var(--font-mono);font-size:1.45rem;font-weight:600;color:var(--ok);line-height:1.1}
+.rank-k{font-family:var(--font-mono);font-size:11px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+.track .chip{align-self:flex-start;margin-top:4px}
