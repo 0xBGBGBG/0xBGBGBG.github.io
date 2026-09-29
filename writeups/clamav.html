@@ -60,7 +60,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--signal);outline-off
 .top a.back:hover{color:var(--ink);border-color:var(--ink)}
 .top .plat{font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--muted);margin-left:auto}
 
-.wrap{position:relative;z-index:1;max-width:760px;margin:0 auto;padding:0 20px 110px}
+.wrap{position:relative;z-index:1;max-width:780px;margin:0 auto;padding:0 20px 110px}
+.sheet{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:30px 34px 44px;margin-top:26px;box-shadow:0 1px 2px rgba(0,0,0,.04),0 10px 34px rgba(0,0,0,.06)}
+:root[data-theme="dark"] .sheet{box-shadow:0 1px 2px rgba(0,0,0,.3),0 10px 34px rgba(0,0,0,.4)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .sheet{box-shadow:0 1px 2px rgba(0,0,0,.3),0 10px 34px rgba(0,0,0,.4)}}
+@media(max-width:560px){.sheet{padding:22px 16px 30px;border-radius:10px}
+.steps{margin-left:-16px;margin-right:-16px;padding-left:16px;padding-right:16px}}
 .hero{text-align:center;padding:40px 0 30px;border-bottom:1px solid var(--line)}
 .hero .mascot{width:150px;height:auto;margin:0 auto 10px;display:block;image-rendering:pixelated;
   filter:drop-shadow(0 6px 16px rgba(0,0,0,.28))}
@@ -73,12 +78,12 @@ h1{font-size:clamp(2.4rem,8vw,3.6rem);line-height:1;margin:0 0 10px;font-weight:
 .chips .chip b{color:var(--ink);font-weight:600}
 .chips .chip.crit b{color:var(--signal)}
 
-.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:30px 0 0}
+.meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin:0}
 .meta .m{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:12px 14px}
 .meta .mk{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 .meta .mv{font-size:.95rem;margin-top:3px;overflow-wrap:anywhere}
 
-.steps{position:sticky;top:54px;z-index:30;margin:34px -20px 0;padding:10px 20px;
+.steps{position:sticky;top:54px;z-index:30;margin:4px -34px 0;padding:10px 34px;
   background:color-mix(in srgb,var(--paper) 92%,transparent);backdrop-filter:blur(8px);
   border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   display:flex;gap:8px;overflow-x:auto;scrollbar-width:none}
@@ -108,7 +113,7 @@ p{margin:14px 0}
 :not(.cmd)>code{font-family:var(--mono);font-size:.85em;background:var(--surface2);border:1px solid var(--line);border-radius:3px;padding:1px 5px;overflow-wrap:anywhere}
 
 /* imagens: mais largas que o texto para leitura, nitidez de screenshot (sem pixelado) */
-figure{width:min(100vw - 32px, 1040px);margin-left:50%;transform:translateX(-50%);margin-top:22px;margin-bottom:22px}
+figure{margin:24px 0}
 figure .frame{border:1px solid var(--line);border-radius:8px;padding:8px;background:var(--surface);
   box-shadow:0 4px 22px rgba(0,0,0,.12);cursor:zoom-in;display:block;line-height:0}
 figure .frame:hover{border-color:var(--signal)}
@@ -160,6 +165,7 @@ footer{margin-top:46px;padding-top:22px;border-top:1px solid var(--line);text-al
     </div>
   </header>
 
+  <div class="sheet">
   <div class="meta">
     <div class="m"><div class="mk">Plataforma</div><div class="mv">OffSec PG Practice</div></div>
     <div class="m"><div class="mk">Sistema</div><div class="mv">Linux — Debian sarge</div></div>
@@ -239,6 +245,7 @@ whoami
     </div>
     <div class="tags"><span>SMTP</span><span>Sendmail</span><span>clamav-milter</span><span>CVE-2007-4560</span><span>Perl</span><span>inetd</span><span>bind shell</span></div>
   </section>
+  </div>
 
   <footer>
     Máquina liberada para publicação, conforme a política de divulgação da OffSec.<br>
