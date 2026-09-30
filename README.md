@@ -22,7 +22,7 @@ repositório é exatamente o que é servido.
 | `index.html` | Todo o conteúdo, uma seção `.view` por item da navegação |
 | `assets/css/cv.css` | Tokens de cor no `:root`, tema claro e escuro, layout de duas colunas |
 | `assets/js/cv.js` | Roteamento por hash, troca de idioma, contador do exame, gaveta no mobile |
-| `writeups/TEMPLATE.md` | Modelo de writeup no formato de relatório de pentest |
+| `writeups/TEMPLATE.html` | Modelo de writeup (página pronta com guia de uso e blocos) |
 | `.well-known/security.txt` | Canal de contato para relato de vulnerabilidade (RFC 9116) |
 
 Bilíngue PT/EN: o português fica no conteúdo do elemento, o inglês no atributo
@@ -37,7 +37,7 @@ Bilíngue PT/EN: o português fica no conteúdo do elemento, o inglês no atribu
 **Nova seção:** um `<a href="#slug">` na coluna e uma
 `<section class="view" id="v-slug" hidden>` no `<main>`.
 
-**Novo writeup:** copie `writeups/TEMPLATE.md` e ligue a partir da seção da plataforma
+**Novo writeup:** copie `writeups/TEMPLATE.html` e ligue a partir da seção da plataforma
 correspondente (Proving Grounds Play, Practice ou HTB Máquinas).
 
 Todo push na branch `main` republica o site.
