@@ -216,6 +216,11 @@ a.chip:hover{border-color:var(--ink);color:var(--ink)}
 a.card:hover{border-color:var(--ink)}
 .card .sub{font-family:var(--font-mono);font-size:12px;color:var(--muted)}
 .card p{font-size:.9rem;color:var(--muted);margin:0}
+/* cards de perfil verificado — prova externa em destaque */
+.card.proof{border-left:3px solid var(--signal)}
+.card.proof .lvl{font-family:var(--font-mono);font-size:.82rem;color:var(--ink);margin:0}
+.card.proof .go{font-family:var(--font-mono);font-size:12px;color:var(--signal);margin-top:2px}
+a.card.proof:hover{border-color:var(--signal)}
 .status{
   font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
   padding:3px 7px;border-radius:2px;align-self:flex-start;border:1px solid;
